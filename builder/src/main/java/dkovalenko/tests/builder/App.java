@@ -1,20 +1,16 @@
 package dkovalenko.tests.builder;
 
-import dkovalenko.tests.builder.builder.OfficeBuilder;
+import dkovalenko.tests.builder.flat.LivingRoomBuilder;
+import dkovalenko.tests.builder.office.OfficeBuilder;
 
 public class App {
 
     public static void main(String[] args) {
-        OfficeBuilder officeBuilder = new OfficeBuilder();
-        Office office = officeBuilder
-                .addComputer()
-                .addComputer()
-                .addChair()
-                .addMirror()
-                .addChair()
-                .addComputer()
-                .addChair()
-                .build();
-        System.out.println(office.getFullInfo());
+        Director director = new Director(new LivingRoomBuilder());
+        Room room = director.buildDoubleRoom();
+        System.out.println(room.getFullInfo());
+        director.setBuilder(new OfficeBuilder());
+        Room smallOfficeRoom = director.buildSmallRoom();
+        System.out.println(smallOfficeRoom.getFullInfo());
     }
 }

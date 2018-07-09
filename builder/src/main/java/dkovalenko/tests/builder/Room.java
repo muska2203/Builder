@@ -2,7 +2,7 @@ package dkovalenko.tests.builder;
 
 import java.util.List;
 
-public interface Office {
+public interface Room {
 
     String getFullInfo();
 
