@@ -12,6 +12,6 @@ public class OfficeItem implements Item {
 
     @Override
     public String getName() {
-        return name + " для оффисного помещения";
+        return name + " для офисного помещения";
     }
 }
